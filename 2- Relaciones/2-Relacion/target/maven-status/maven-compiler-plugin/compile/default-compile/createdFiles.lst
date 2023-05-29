@@ -1,0 +1,7 @@
+Persona\Persona.class
+AdopcionMascotas\AdopcionMascotas.class
+Persona\Servicio\PersonaServicio.class
+Perro\Perro.class
+Perro\enumeraciones\Raza.class
+Perro\Servicio\PerroServicio.class
+Perro\enumeraciones\Tamaño.class

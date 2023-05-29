@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.RuletaRusa.Servicio">
+  <ClassDiagramComponents>
+    <Class name="JuegoServicio" package="RuletaRusa.Servicio" visibility="public" xPosition="44.0" yPosition="148.0">
+      <Fields>
+        <Field name="servJug" type="JugadorServicio" visibility="package"/>
+        <Field name="servRev" type="RevolverServicio" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearJuego" returnType="Juego" visibility="public"/>
+        <Method name="ronda" returnType="Juego" visibility="public">
+          <Argument type="Juego" name="juego"/>
+          <Argument type="int" name="index"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="JugadorServicio" package="RuletaRusa.Servicio" visibility="public" xPosition="494.0" yPosition="307.0">
+      <Fields>
+        <Field name="read" type="Scanner" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="inicializarJugadores" returnType="ArrayList&lt;Jugador&gt;" visibility="public"/>
+        <Method name="disparo" returnType="boolean" visibility="public">
+          <Argument type="Revolver" name="revolver"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RevolverServicio" package="RuletaRusa.Servicio" visibility="public" xPosition="462.0" yPosition="36.0">
+      <Fields>
+        <Field name="random" type="Random" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="llenarRevolver" returnType="Revolver" visibility="public"/>
+        <Method name="disparar" returnType="boolean" visibility="public">
+          <Argument type="Revolver" name="revolver"/>
+        </Method>
+        <Method name="siguienteCamara" returnType="Revolver" visibility="public">
+          <Argument type="Revolver" name="revolver"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="servRev" source="RuletaRusa.Servicio.JuegoServicio" target="RuletaRusa.Servicio.RevolverServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="servJug" source="RuletaRusa.Servicio.JuegoServicio" target="RuletaRusa.Servicio.JugadorServicio" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

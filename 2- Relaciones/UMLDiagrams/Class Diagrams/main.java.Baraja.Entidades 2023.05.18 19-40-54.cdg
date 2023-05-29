@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.Baraja.Entidades">
+  <ClassDiagramComponents>
+    <Class name="Baraja" package="Baraja.Entidades" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="cartasEnJuego" type="ArrayList&lt;Carta&gt;" visibility="private"/>
+        <Field name="cartasEnMazo" type="ArrayList&lt;Carta&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Carta" package="Baraja.Entidades" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="palo" type="Palo" visibility="private"/>
+        <Field name="nro" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getPalo" returnType="Palo" visibility="public"/>
+        <Method name="setPalo" returnType="void" visibility="public">
+          <Argument type="Palo" name="palo"/>
+        </Method>
+        <Method name="getNro" returnType="int" visibility="public"/>
+        <Method name="setNro" returnType="void" visibility="public">
+          <Argument type="int" name="nro"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="cartasEnMazo" source="Baraja.Entidades.Baraja" target="Baraja.Entidades.Carta" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Carta&gt;"/>
+    <HasRelation name="cartasEnJuego" source="Baraja.Entidades.Baraja" target="Baraja.Entidades.Carta" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Carta&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

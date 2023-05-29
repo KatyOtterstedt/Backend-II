@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>264</y>
+      <w>248</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>Package: Entidades
+Class: Baraja
+--
+- Carta siguienteCarta 
+- Stack &lt;Cartas&gt; cartasEnJuego
+- Stack &lt;Cartas&gt; cartasEnMazo
+--
++ inicializarBaraja () LISTO
+//Barajar = mezclar
++ barajar (Baraja baraja) LISTO
+//Dar = repartir
++ darCartas (Baraja baraja, ArrayList&lt;Jugador&gt;
+listaJugadores) LISTO
+//Toma la siguiente carta de la baraja
++ siguienteCarta (Baraja baraja) LISTO
+//Indica cuántas cartas aún se pueden repartir
++ cartasDisponibles(Baraja baraja) VER
++ mostrarRemanentes (Baraja baraja) LISTO
+--
+Responsibilities
+-- Contiene todas las cartas q no
+están en mano de un jugador
+
+bg=pink
+layer=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>352</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Package: Entidades
+Class: Carta
+--
+- Palo palo
+- int nro
+--
++ toString() LISTO
+--
+Responsibilities
+-- Cartas q van a formar el mazo
+bg=ORANGE</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>384</x>
+      <y>0</y>
+      <w>224</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>Package: Entidades
+Class: Juego
+--
+- ArrayList &lt;Jugador&gt; listaJugadores
+- Baraja barajaDeJuego
+--
+//Para elegir cuál es la más descartable de
+//las q tengo, sin q tenga q ver lo q hay en mazo
++ rondaJuego(ArrayList &lt;Jugador&gt; 
+listaJugadores, Baraja barajaDeJuego)
++ compararNros(ArrayList &lt;Cartas&gt; 
+cartasEnMano)
++ compararPalos(ArrayList &lt;Cartas&gt; 
+cartasEnMano)
++ tomarCarta(ArrayList &lt;Cartas&gt; 
+cartasEnMano, Stack &lt;Cartas&gt;
+cartasEnJuego, Stack &lt;Cartas&gt;
+cartasEnMazo)
++ finalizarJuego(Juego juego)
+--
+Responsibilities
+-- Chequea sus cartas y en base a eso
+decide si cuál tirar y si buscar carta del
+mazo o del descarte  
+
+fg=BLACK
+bg=BLACK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>368</y>
+      <w>216</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+r1=Carta agrega a baraja
+fontsize=12
+</panel_attributes>
+    <additional_attributes>250.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>264</y>
+      <w>224</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>Package: Entidades
+Class: Jugador
+--
+- ArrayList &lt;Cartas&gt; cartasEnMano
+--
+//Para elegir cuál es la más descartable de
+//las q tengo, sin q tenga q ver lo q hay en mazo
++ descartarCarta(ArrayList &lt;Cartas&gt; 
+cartasEnMano) LISTO
++ compararNros(ArrayList &lt;Cartas&gt; 
+cartasEnMano)
++ compararPalos(ArrayList &lt;Cartas&gt; 
+cartasEnMano)
++ tomarCarta(ArrayList &lt;Cartas&gt; 
+cartasEnMano, Stack &lt;Cartas&gt;
+cartasEnJuego, Stack &lt;Cartas&gt;
+cartasEnMazo)
+//Cuando el jugador ya puede terminar
++ cortar()
+--
+Responsibilities
+-- Chequea sus cartas y en base a eso
+decide si cuál tirar y si buscar carta del
+mazo o del descarte  
+
+fg=BLACK
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>248</y>
+      <w>200</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+r1=Juego está compuesto por jugadores
+fontsize=12
+</panel_attributes>
+    <additional_attributes>230.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>248</y>
+      <w>176</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+fontsize=12
+r1=La baraja se agrega al juego</panel_attributes>
+    <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>368</y>
+      <w>200</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+r1=Carta agrega a baraja
+fontsize=12
+</panel_attributes>
+    <additional_attributes>10.0;20.0;230.0;20.0</additional_attributes>
+  </element>
+</diagram>
